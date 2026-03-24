@@ -1,7 +1,8 @@
-﻿using System;
+﻿using IdleClicker.Properties;
+using System;
 using System.IO;
-using System.Windows.Forms;
 using System.Text.Json;
+using System.Windows.Forms;
 using WMPLib;
 namespace IdleClicker
 {
@@ -17,7 +18,7 @@ namespace IdleClicker
         {
             InitializeComponent();
              SetupMusic();
-             this.BackgroundImage = Image.FromFile("1.jpg");
+             this.BackgroundImage = Properties.Resources._1;
              CurrentSave = SaveManager.Load();
              AplikujNastaveni();
         }
