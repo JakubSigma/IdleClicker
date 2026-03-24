@@ -1,0 +1,219 @@
+﻿namespace IdleClicker
+{
+    partial class MainGame
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            pictureBoxClicker = new PictureBox();
+            labelCurrency = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            button9 = new Button();
+            labelUpgrades = new Label();
+            Click = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxClicker).BeginInit();
+            SuspendLayout();
+            // 
+            // pictureBoxClicker
+            // 
+            pictureBoxClicker.BackColor = Color.Transparent;
+            pictureBoxClicker.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBoxClicker.Location = new Point(471, 146);
+            pictureBoxClicker.Name = "pictureBoxClicker";
+            pictureBoxClicker.Size = new Size(348, 296);
+            pictureBoxClicker.TabIndex = 0;
+            pictureBoxClicker.TabStop = false;
+            pictureBoxClicker.Click += pictureBoxClicker_Click;
+            // 
+            // labelCurrency
+            // 
+            labelCurrency.AutoSize = true;
+            labelCurrency.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelCurrency.Location = new Point(25, 23);
+            labelCurrency.Name = "labelCurrency";
+            labelCurrency.Size = new Size(122, 45);
+            labelCurrency.TabIndex = 1;
+            labelCurrency.Text = "Měna: ";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(1038, 106);
+            button1.Name = "button1";
+            button1.Size = new Size(173, 45);
+            button1.TabIndex = 2;
+            button1.Text = "Upgrade1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(1038, 157);
+            button2.Name = "button2";
+            button2.Size = new Size(173, 45);
+            button2.TabIndex = 3;
+            button2.Text = "Upgrade2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(1038, 208);
+            button3.Name = "button3";
+            button3.Size = new Size(173, 45);
+            button3.TabIndex = 4;
+            button3.Text = "Upgrade3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(1038, 259);
+            button4.Name = "button4";
+            button4.Size = new Size(173, 45);
+            button4.TabIndex = 5;
+            button4.Text = "Upgrade4";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(1038, 310);
+            button5.Name = "button5";
+            button5.Size = new Size(173, 45);
+            button5.TabIndex = 6;
+            button5.Text = "button5";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(1038, 361);
+            button6.Name = "button6";
+            button6.Size = new Size(173, 45);
+            button6.TabIndex = 7;
+            button6.Text = "button6";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(1038, 412);
+            button7.Name = "button7";
+            button7.Size = new Size(173, 45);
+            button7.TabIndex = 8;
+            button7.Text = "button7";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(1038, 463);
+            button8.Name = "button8";
+            button8.Size = new Size(173, 45);
+            button8.TabIndex = 9;
+            button8.Text = "button8";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(1038, 514);
+            button9.Name = "button9";
+            button9.Size = new Size(173, 45);
+            button9.TabIndex = 10;
+            button9.Text = "button9";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // labelUpgrades
+            // 
+            labelUpgrades.AutoSize = true;
+            labelUpgrades.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            labelUpgrades.Location = new Point(1038, 23);
+            labelUpgrades.Name = "labelUpgrades";
+            labelUpgrades.Size = new Size(163, 45);
+            labelUpgrades.TabIndex = 11;
+            labelUpgrades.Text = "Vylepšení";
+            // 
+            // Click
+            // 
+            Click.AutoSize = true;
+            Click.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Click.Location = new Point(25, 514);
+            Click.Name = "Click";
+            Click.Size = new Size(164, 45);
+            Click.TabIndex = 12;
+            Click.Text = "Síla kliku:";
+            // 
+            // MainGame
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1232, 599);
+            Controls.Add(Click);
+            Controls.Add(labelUpgrades);
+            Controls.Add(button9);
+            Controls.Add(button8);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(labelCurrency);
+            Controls.Add(pictureBoxClicker);
+            Name = "MainGame";
+            Text = "Idle Clicker";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxClicker).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private PictureBox pictureBoxClicker;
+        private Label labelCurrency;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private Button button7;
+        private Button button8;
+        private Button button9;
+        private Label labelUpgrades;
+        private Label Click;
+    }
+}
