@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonUlozit = new Button();
             trackBarHudba = new TrackBar();
             trackBarSFX = new TrackBar();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
+            labelMusic = new Label();
+            labelSFX = new Label();
             ((System.ComponentModel.ISupportInitialize)trackBarHudba).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarSFX).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -43,22 +42,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
-            // buttonUlozit
-            // 
-            buttonUlozit.FlatStyle = FlatStyle.Flat;
-            buttonUlozit.Location = new Point(267, 337);
-            buttonUlozit.Name = "buttonUlozit";
-            buttonUlozit.Size = new Size(311, 66);
-            buttonUlozit.TabIndex = 1;
-            buttonUlozit.Text = "Uložit nastavení";
-            buttonUlozit.UseVisualStyleBackColor = true;
-            // 
             // trackBarHudba
             // 
-            trackBarHudba.Location = new Point(404, 247);
+            trackBarHudba.Location = new Point(278, 279);
             trackBarHudba.Maximum = 100;
             trackBarHudba.Name = "trackBarHudba";
-            trackBarHudba.Size = new Size(104, 45);
+            trackBarHudba.Size = new Size(208, 45);
             trackBarHudba.TabIndex = 2;
             trackBarHudba.TickStyle = TickStyle.None;
             trackBarHudba.Value = 50;
@@ -66,10 +55,10 @@
             // 
             // trackBarSFX
             // 
-            trackBarSFX.Location = new Point(404, 180);
+            trackBarSFX.Location = new Point(278, 183);
             trackBarSFX.Maximum = 100;
             trackBarSFX.Name = "trackBarSFX";
-            trackBarSFX.Size = new Size(104, 45);
+            trackBarSFX.Size = new Size(208, 45);
             trackBarSFX.TabIndex = 3;
             trackBarSFX.TickStyle = TickStyle.None;
             trackBarSFX.Value = 50;
@@ -98,37 +87,38 @@
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
             // 
-            // label1
+            // labelMusic
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(242, 247);
-            label1.Name = "label1";
-            label1.Size = new Size(92, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Hlasitost Hudby";
+            labelMusic.AutoSize = true;
+            labelMusic.Font = new Font("Segoe UI", 24F);
+            labelMusic.Location = new Point(278, 231);
+            labelMusic.Name = "labelMusic";
+            labelMusic.Size = new Size(254, 45);
+            labelMusic.TabIndex = 7;
+            labelMusic.Text = "Hlasitost Hudby:";
             // 
-            // label2
+            // labelSFX
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(249, 180);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 15);
-            label2.TabIndex = 8;
-            label2.Text = "Hlasitost SFX";
+            labelSFX.AutoSize = true;
+            labelSFX.Font = new Font("Segoe UI", 24F);
+            labelSFX.Location = new Point(278, 135);
+            labelSFX.Name = "labelSFX";
+            labelSFX.Size = new Size(221, 45);
+            labelSFX.TabIndex = 8;
+            labelSFX.Text = "Hlasitost SFX: ";
             // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(labelSFX);
+            Controls.Add(labelMusic);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(trackBarSFX);
             Controls.Add(trackBarHudba);
-            Controls.Add(buttonUlozit);
             Name = "Settings";
             Text = "Settings";
             ((System.ComponentModel.ISupportInitialize)trackBarHudba).EndInit();
@@ -141,14 +131,12 @@
         }
 
         #endregion
-
-        private Button buttonUlozit;
         private TrackBar trackBarHudba;
         private TrackBar trackBarSFX;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private Label label1;
-        private Label label2;
+        private Label labelMusic;
+        private Label labelSFX;
     }
 }

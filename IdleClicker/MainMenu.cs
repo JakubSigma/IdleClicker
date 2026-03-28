@@ -1,6 +1,8 @@
 ﻿using IdleClicker.Properties;
 using System;
+using System.Drawing.Text;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Windows.Forms;
 using WMPLib;
@@ -12,14 +14,14 @@ namespace IdleClicker
         private WindowsMediaPlayer musicPlayer = new WindowsMediaPlayer();
         private string musicPath = "sbr.mp3";
         public SaveData CurrentSave;
-        private string savePath = "save.json";
-
+        private PrivateFontCollection pfc = new PrivateFontCollection();
         public IdleClicker()
         {
             InitializeComponent();
              SetupMusic();
              this.BackgroundImage = Properties.Resources._1;
-             CurrentSave = SaveManager.Load();
+            pictureBoxName.BackgroundImage = Properties.Resources.name;
+            CurrentSave = SaveManager.Load();
              AplikujNastaveni();
         }
 
@@ -36,30 +38,33 @@ namespace IdleClicker
 
         private void AplikujNastaveni()
         {
-            // Příklad: Pokud už máš v savu uloženou hlasitost, nastav ji přehrávači
-            // musicPlayer.settings.volume = (int)(CurrentSave.MusicVolume * 100);
-            musicPlayer.settings.volume = (int)(CurrentSave.MusicVolume);
+
+            musicPlayer.settings.volume = CurrentSave.MusicVolume;
         }
         public void UpdateVolume(int value)
         {
 
-            musicPlayer.settings.volume = value;
+            CurrentSave.MusicVolume = value;
+            SaveManager.Save(CurrentSave);
+            AplikujNastaveni();
 
         }
 
-        private void LoadGame()
+
+
+        public void fontLoad()
         {
-            if (File.Exists(savePath))
-            {
-                string json = File.ReadAllText(savePath);
-                CurrentSave = JsonSerializer.Deserialize<SaveData>(json);
-            }
-            else
-            {
-                CurrentSave = new SaveData();
-            }
+            byte[] fontData = Properties.Resources.Fedora;
+            IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
+            Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            pfc.AddMemoryFont(fontPtr, fontData.Length);
+            Marshal.FreeCoTaskMem(fontPtr);
         }
 
+        private void FontApply()
+        {
+
+        }
 
 
         private void buttonQuit_Click(object sender, EventArgs e)

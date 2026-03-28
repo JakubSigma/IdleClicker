@@ -15,7 +15,10 @@ namespace IdleClicker
 
         // Progress
         public double Currency { get; set; } = 0;
+        public double IdleGen { get; set; } = 1;
         public int ClickPower { get; set; } = 1;
-        public int[] UpgradeLevels { get; set; } = new int[9];
+        public int[] UpgradeLevels { get; set; } = new int[4];
+
+        public int[] UpgradePrice { get; set; } = {10, 100, 1000, 10000};
     }
 }

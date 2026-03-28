@@ -33,15 +33,16 @@
             buttonNewGame = new Button();
             buttonSettings = new Button();
             buttonQuit = new Button();
-            label1 = new Label();
+            pictureBoxName = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxName).BeginInit();
             SuspendLayout();
             // 
             // buttonNewGame
             // 
             buttonNewGame.BackColor = Color.PeachPuff;
             buttonNewGame.FlatStyle = FlatStyle.Flat;
-            buttonNewGame.Location = new Point(478, 155);
+            buttonNewGame.Location = new Point(476, 193);
             buttonNewGame.Name = "buttonNewGame";
             buttonNewGame.Size = new Size(311, 66);
             buttonNewGame.TabIndex = 1;
@@ -53,7 +54,7 @@
             // 
             buttonSettings.BackColor = Color.PeachPuff;
             buttonSettings.FlatStyle = FlatStyle.Flat;
-            buttonSettings.Location = new Point(478, 268);
+            buttonSettings.Location = new Point(476, 306);
             buttonSettings.Name = "buttonSettings";
             buttonSettings.Size = new Size(311, 66);
             buttonSettings.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             buttonQuit.BackColor = Color.PeachPuff;
             buttonQuit.FlatStyle = FlatStyle.Flat;
-            buttonQuit.Location = new Point(478, 382);
+            buttonQuit.Location = new Point(476, 420);
             buttonQuit.Name = "buttonQuit";
             buttonQuit.Size = new Size(311, 66);
             buttonQuit.TabIndex = 3;
@@ -73,16 +74,15 @@
             buttonQuit.UseVisualStyleBackColor = false;
             buttonQuit.Click += buttonQuit_Click;
             // 
-            // label1
+            // pictureBoxName
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Semibold", 32.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(493, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(287, 59);
-            label1.TabIndex = 4;
-            label1.Text = "IDLE CLICKER";
+            pictureBoxName.BackColor = Color.Transparent;
+            pictureBoxName.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBoxName.Location = new Point(399, 39);
+            pictureBoxName.Name = "pictureBoxName";
+            pictureBoxName.Size = new Size(467, 114);
+            pictureBoxName.TabIndex = 5;
+            pictureBoxName.TabStop = false;
             // 
             // IdleClicker
             // 
@@ -90,15 +90,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1232, 599);
-            Controls.Add(label1);
+            Controls.Add(pictureBoxName);
             Controls.Add(buttonQuit);
             Controls.Add(buttonSettings);
             Controls.Add(buttonNewGame);
             Name = "IdleClicker";
             Text = "Idle Clicker";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxName).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -107,6 +107,6 @@
         private Button buttonNewGame;
         private Button buttonSettings;
         private Button buttonQuit;
-        private Label label1;
+        private PictureBox pictureBoxName;
     }
 }

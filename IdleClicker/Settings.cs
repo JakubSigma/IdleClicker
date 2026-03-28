@@ -5,27 +5,30 @@
 
         private IdleClicker _parent;
 
-        public Settings(IdleClicker parent) // Tady taky změna
+        public Settings(IdleClicker parent)
         {
             InitializeComponent();
+  
             this._parent = parent;
+            updateUI();
 
-            // Nastavení trackbaru podle načteného savu
-            if (_parent.CurrentSave != null)
-            {
-                trackBarHudba.Value = (int)(_parent.CurrentSave.MusicVolume);
-            }
+
+        }
+
+        private void updateUI()
+        {
+            trackBarHudba.Value = _parent.CurrentSave.MusicVolume;
+          
         }
 
         private void btnUlozit_Click(object sender, EventArgs e)
         {
-            SaveManager.Save(_parent.CurrentSave);
-            MessageBox.Show("Uloženo!");
+            
         }
 
         private void trackBarHudba_Scroll(object sender, EventArgs e)
         {
-            // Voláme metodu v hlavním okně
+            
             _parent.UpdateVolume(trackBarHudba.Value);
         }
     }
