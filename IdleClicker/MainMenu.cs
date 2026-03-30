@@ -23,6 +23,8 @@ namespace IdleClicker
             pictureBoxName.BackgroundImage = Properties.Resources.name;
             CurrentSave = SaveManager.Load();
              AplikujNastaveni();
+            fontLoad();
+            FontApply();
         }
 
         private void SetupMusic()
@@ -63,7 +65,9 @@ namespace IdleClicker
 
         private void FontApply()
         {
-
+            buttonNewGame.Font = new Font(pfc.Families[0], 24);
+            buttonSettings.Font = new Font(pfc.Families[0], 24);
+            buttonQuit.Font = new Font(pfc.Families[0], 24);
         }
 
 

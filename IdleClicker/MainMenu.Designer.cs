@@ -70,7 +70,7 @@
             buttonQuit.Name = "buttonQuit";
             buttonQuit.Size = new Size(311, 66);
             buttonQuit.TabIndex = 3;
-            buttonQuit.Text = "Ukončit hru";
+            buttonQuit.Text = "Ukoncit hru";
             buttonQuit.UseVisualStyleBackColor = false;
             buttonQuit.Click += buttonQuit_Click;
             // 

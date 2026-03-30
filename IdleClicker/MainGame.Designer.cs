@@ -99,9 +99,9 @@
             labelClickPower.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 238);
             labelClickPower.Location = new Point(329, 513);
             labelClickPower.Name = "labelClickPower";
-            labelClickPower.Size = new Size(164, 45);
+            labelClickPower.Size = new Size(191, 45);
             labelClickPower.TabIndex = 12;
-            labelClickPower.Text = "Síla kliku:";
+            labelClickPower.Text = "Síla kliku: 1";
             // 
             // gameTimer
             // 
@@ -204,14 +204,14 @@
             labelClickCena.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelClickCena.Location = new Point(677, 561);
             labelClickCena.Name = "labelClickCena";
-            labelClickCena.Size = new Size(60, 30);
+            labelClickCena.Size = new Size(93, 30);
             labelClickCena.TabIndex = 24;
-            labelClickCena.Text = "Cena";
+            labelClickCena.Text = "Cena: 50";
             // 
             // timerCheck
             // 
             timerCheck.Enabled = true;
-            timerCheck.Interval = 10;
+            timerCheck.Interval = 1;
             timerCheck.Tick += timerCheck_Tick;
             // 
             // MainGame

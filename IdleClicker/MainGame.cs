@@ -42,21 +42,21 @@ namespace IdleClicker
             labelUpgrade3.Text = $"Lvl. {_parent.CurrentSave.UpgradeLevels[2]}             Cena: {_parent.CurrentSave.UpgradePrice[2]}";
             labelUpgrade4.Text = $"Lvl. {_parent.CurrentSave.UpgradeLevels[3]}             Cena: {_parent.CurrentSave.UpgradePrice[3]}";
             labelClickPower.Text = "Síla kliknutí: " + _parent.CurrentSave.ClickPower;
-
+            labelClickCena.Text = $"Cena: {1500 * _parent.CurrentSave.ClickPower}";
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
 
             _parent.CurrentSave.Currency += _parent.CurrentSave.ClickPower * _parent.CurrentSave.IdleGen;
-            UpdateUI();
+            
         }
         private void pictureBoxClicker_Click(object sender, EventArgs e)
         {
 
             _parent.CurrentSave.Currency += _parent.CurrentSave.ClickPower;
 
-            labelCurrency.Text = "Peníze: " + _parent.CurrentSave.Currency;
+            
 
             SaveManager.Save(_parent.CurrentSave);
         }
@@ -79,60 +79,78 @@ namespace IdleClicker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _parent.CurrentSave.Currency -= _parent.CurrentSave.UpgradePrice[1];
-            UpdateUI();
-            _parent.CurrentSave.IdleGen += MultiplierUpgrade[0];
-            _parent.CurrentSave.UpgradeLevels[0]++;
-            _parent.CurrentSave.UpgradePrice[0] = _parent.CurrentSave.UpgradePrice[0] * 2;
-            button1.Enabled = false;
-            SaveManager.Save(_parent.CurrentSave);
+            if (_parent.CurrentSave.Currency - _parent.CurrentSave.UpgradePrice[0] >= 0)
+            {
+                _parent.CurrentSave.Currency -= _parent.CurrentSave.UpgradePrice[0];
+
+                _parent.CurrentSave.IdleGen += MultiplierUpgrade[0];
+                _parent.CurrentSave.UpgradeLevels[0]++;
+                _parent.CurrentSave.UpgradePrice[0] = _parent.CurrentSave.UpgradePrice[0] * 2;
+                button1.Enabled = false;
+                SaveManager.Save(_parent.CurrentSave);
+            }
+
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
-            _parent.CurrentSave.Currency -= _parent.CurrentSave.UpgradePrice[1];
-            UpdateUI();
-            _parent.CurrentSave.IdleGen += MultiplierUpgrade[1];
-            _parent.CurrentSave.UpgradeLevels[1]++;
-            _parent.CurrentSave.UpgradePrice[1] = _parent.CurrentSave.UpgradePrice[1] * 3;
-            button2.Enabled = false;
-            SaveManager.Save(_parent.CurrentSave);
+            if (_parent.CurrentSave.Currency - _parent.CurrentSave.UpgradePrice[1] >= 0)
+            {
+                _parent.CurrentSave.Currency -= _parent.CurrentSave.UpgradePrice[1];
+
+                _parent.CurrentSave.IdleGen += MultiplierUpgrade[1];
+                _parent.CurrentSave.UpgradeLevels[1]++;
+                _parent.CurrentSave.UpgradePrice[1] = _parent.CurrentSave.UpgradePrice[1] * 3;
+                button2.Enabled = false;
+                SaveManager.Save(_parent.CurrentSave);
+            }
+
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            _parent.CurrentSave.Currency -= _parent.CurrentSave.UpgradePrice[2];
-            UpdateUI();
-            _parent.CurrentSave.IdleGen += MultiplierUpgrade[2];
-            _parent.CurrentSave.UpgradeLevels[2]++;
-            _parent.CurrentSave.UpgradePrice[2] = _parent.CurrentSave.UpgradePrice[2] * 4;
-            button3.Enabled = false;
-            SaveManager.Save(_parent.CurrentSave);
+            if (_parent.CurrentSave.Currency - _parent.CurrentSave.UpgradePrice[2] >= 0)
+            {
+                _parent.CurrentSave.Currency -= _parent.CurrentSave.UpgradePrice[2];
+
+                _parent.CurrentSave.IdleGen += MultiplierUpgrade[2];
+                _parent.CurrentSave.UpgradeLevels[2]++;
+                _parent.CurrentSave.UpgradePrice[2] = _parent.CurrentSave.UpgradePrice[2] * 4;
+                button3.Enabled = false;
+                SaveManager.Save(_parent.CurrentSave);
+            }
+
+
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            _parent.CurrentSave.Currency -= _parent.CurrentSave.UpgradePrice[3];
-            UpdateUI();
-            _parent.CurrentSave.IdleGen += MultiplierUpgrade[3];
-            _parent.CurrentSave.UpgradeLevels[3]++;
-            _parent.CurrentSave.UpgradePrice[3] = _parent.CurrentSave.UpgradePrice[3] * 5;
-            button4.Enabled = false;
-            SaveManager.Save(_parent.CurrentSave);
+            if (_parent.CurrentSave.Currency - _parent.CurrentSave.UpgradePrice[3] >= 0)
+            {
+                _parent.CurrentSave.Currency -= _parent.CurrentSave.UpgradePrice[3];
+
+                _parent.CurrentSave.IdleGen += MultiplierUpgrade[3];
+                _parent.CurrentSave.UpgradeLevels[3]++;
+                _parent.CurrentSave.UpgradePrice[3] = _parent.CurrentSave.UpgradePrice[3] * 5;
+                button4.Enabled = false;
+                SaveManager.Save(_parent.CurrentSave);
+            }
+            
         }
 
         private void buttonClickPower_Click(object sender, EventArgs e)
         {
-            int cena = 50;
+            int cena = 1500;
             _parent.CurrentSave.ClickPower++;
             _parent.CurrentSave.Currency -= cena * _parent.CurrentSave.ClickPower;
-            UpdateUI();
-            labelClickCena.Text = $"Cena: {50 * _parent.CurrentSave.ClickPower}";
+
+            
             SaveManager.Save(_parent.CurrentSave);
 
         }
 
         private void timerCheck_Tick(object sender, EventArgs e)
         {
+            UpdateUI();
             if (_parent.CurrentSave.Currency >= _parent.CurrentSave.UpgradePrice[0])
             {
                 button1.Enabled = true;
@@ -167,9 +185,17 @@ namespace IdleClicker
             {
                 button4.Enabled = false;
             }
-            if (_parent.CurrentSave.ClickPower >= 25)
+            if (_parent.CurrentSave.ClickPower >= 25 || _parent.CurrentSave.Currency < 1500 * _parent.CurrentSave.ClickPower)
             {
                 buttonClickPower.Enabled = false;
+            }
+            else
+            {
+                buttonClickPower.Enabled = true;
+            }
+            if (_parent.CurrentSave.Currency < 0)
+            {
+                _parent.CurrentSave.Currency = 0;
             }
         }
     }
