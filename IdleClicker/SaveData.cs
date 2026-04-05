@@ -8,7 +8,7 @@ namespace IdleClicker
 {
     public class SaveData
     {
-        // Settings
+        // Settings (Background a SFX scrapnuto)
         public int BackgroundIndex { get; set; } = 0;
         public int MusicVolume { get; set; } = 50;
         public int SfxVolume { get; set; } = 50;

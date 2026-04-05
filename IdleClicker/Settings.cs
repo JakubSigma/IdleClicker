@@ -15,6 +15,7 @@
 
         }
 
+        // Nastaveni hlasitosti
         private void updateUI()
         {
             trackBarHudba.Value = _parent.CurrentSave.MusicVolume;
@@ -26,6 +27,7 @@
             
         }
 
+        // Aktualizace hlasitosti při posouvání trackbaru
         private void trackBarHudba_Scroll(object sender, EventArgs e)
         {
             

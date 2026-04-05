@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGame));
             pictureBoxClicker = new PictureBox();
             labelCurrency = new Label();
             button1 = new Button();
@@ -45,6 +46,7 @@
             buttonClickPower = new Button();
             labelClickCena = new Label();
             timerCheck = new System.Windows.Forms.Timer(components);
+            labelPenizeZaSekundu = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClicker).BeginInit();
             SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             // 
             pictureBoxClicker.BackColor = Color.Transparent;
             pictureBoxClicker.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBoxClicker.Location = new Point(449, 145);
+            pictureBoxClicker.Location = new Point(397, 144);
             pictureBoxClicker.Name = "pictureBoxClicker";
             pictureBoxClicker.Size = new Size(422, 336);
             pictureBoxClicker.TabIndex = 0;
@@ -64,16 +66,17 @@
             labelCurrency.AutoSize = true;
             labelCurrency.BackColor = Color.Transparent;
             labelCurrency.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            labelCurrency.Location = new Point(319, 9);
+            labelCurrency.Location = new Point(336, 9);
             labelCurrency.Name = "labelCurrency";
-            labelCurrency.Size = new Size(116, 45);
+            labelCurrency.Size = new Size(170, 45);
             labelCurrency.TabIndex = 1;
-            labelCurrency.Text = "Měna: ";
+            labelCurrency.Text = "Peníze: 0$ ";
             // 
             // button1
             // 
-            button1.BackColor = Color.Transparent;
+            button1.BackColor = Color.DarkSeaGreen;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(25, 72);
             button1.Name = "button1";
             button1.Size = new Size(282, 89);
@@ -97,7 +100,7 @@
             labelClickPower.AutoSize = true;
             labelClickPower.BackColor = Color.Transparent;
             labelClickPower.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            labelClickPower.Location = new Point(329, 513);
+            labelClickPower.Location = new Point(415, 469);
             labelClickPower.Name = "labelClickPower";
             labelClickPower.Size = new Size(191, 45);
             labelClickPower.TabIndex = 12;
@@ -111,8 +114,9 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.Transparent;
+            button2.BackColor = Color.DarkSeaGreen;
             button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(25, 197);
             button2.Name = "button2";
             button2.Size = new Size(282, 89);
@@ -122,8 +126,9 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.Transparent;
+            button3.BackColor = Color.DarkSeaGreen;
             button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Location = new Point(25, 322);
             button3.Name = "button3";
             button3.Size = new Size(282, 89);
@@ -133,8 +138,9 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.Transparent;
+            button4.BackColor = Color.DarkSeaGreen;
             button4.BackgroundImageLayout = ImageLayout.Stretch;
+            button4.FlatStyle = FlatStyle.Flat;
             button4.Location = new Point(25, 447);
             button4.Name = "button4";
             button4.Size = new Size(282, 89);
@@ -188,11 +194,12 @@
             // 
             // buttonClickPower
             // 
-            buttonClickPower.BackColor = Color.Transparent;
+            buttonClickPower.BackColor = Color.DarkSeaGreen;
             buttonClickPower.BackgroundImageLayout = ImageLayout.Stretch;
-            buttonClickPower.Location = new Point(677, 487);
+            buttonClickPower.FlatStyle = FlatStyle.Flat;
+            buttonClickPower.Location = new Point(703, 469);
             buttonClickPower.Name = "buttonClickPower";
-            buttonClickPower.Size = new Size(194, 71);
+            buttonClickPower.Size = new Size(82, 75);
             buttonClickPower.TabIndex = 23;
             buttonClickPower.UseVisualStyleBackColor = false;
             buttonClickPower.Click += buttonClickPower_Click;
@@ -202,11 +209,11 @@
             labelClickCena.AutoSize = true;
             labelClickCena.BackColor = Color.Transparent;
             labelClickCena.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            labelClickCena.Location = new Point(677, 561);
+            labelClickCena.Location = new Point(415, 514);
             labelClickCena.Name = "labelClickCena";
-            labelClickCena.Size = new Size(93, 30);
+            labelClickCena.Size = new Size(126, 30);
             labelClickCena.TabIndex = 24;
-            labelClickCena.Text = "Cena: 50";
+            labelClickCena.Text = "Cena: $1500";
             // 
             // timerCheck
             // 
@@ -214,12 +221,24 @@
             timerCheck.Interval = 1;
             timerCheck.Tick += timerCheck_Tick;
             // 
+            // labelPenizeZaSekundu
+            // 
+            labelPenizeZaSekundu.AutoSize = true;
+            labelPenizeZaSekundu.BackColor = Color.Transparent;
+            labelPenizeZaSekundu.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelPenizeZaSekundu.Location = new Point(336, 72);
+            labelPenizeZaSekundu.Name = "labelPenizeZaSekundu";
+            labelPenizeZaSekundu.Size = new Size(158, 45);
+            labelPenizeZaSekundu.TabIndex = 25;
+            labelPenizeZaSekundu.Text = "Spin: 1$/s";
+            // 
             // MainGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1271, 599);
+            Controls.Add(labelPenizeZaSekundu);
             Controls.Add(labelClickCena);
             Controls.Add(buttonClickPower);
             Controls.Add(labelUpgrade1);
@@ -234,7 +253,9 @@
             Controls.Add(button1);
             Controls.Add(labelCurrency);
             Controls.Add(pictureBoxClicker);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainGame";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Idle Clicker";
             ((System.ComponentModel.ISupportInitialize)pictureBoxClicker).EndInit();
             ResumeLayout(false);
@@ -252,7 +273,7 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private Label label1;
+        private Label labelPenizeZaSekundu;
         private Label label2;
         private Label label3;
         private Label labelUpgrade4;

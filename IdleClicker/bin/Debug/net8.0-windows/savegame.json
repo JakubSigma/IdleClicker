@@ -1,20 +1,20 @@
 {
   "BackgroundIndex": 0,
-  "MusicVolume": 3,
+  "MusicVolume": 10,
   "SfxVolume": 50,
-  "Currency": 1249,
-  "IdleGen": 691,
+  "Currency": 270,
+  "IdleGen": 16,
   "ClickPower": 1,
   "UpgradeLevels": [
-    8,
     3,
-    1,
+    0,
+    0,
     0
   ],
   "UpgradePrice": [
-    2560,
-    2700,
-    4000,
+    80,
+    100,
+    1000,
     10000
   ]
 }

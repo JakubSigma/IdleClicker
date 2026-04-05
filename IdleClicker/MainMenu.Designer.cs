@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdleClicker));
             bindingSource1 = new BindingSource(components);
             buttonNewGame = new Button();
             buttonSettings = new Button();
@@ -94,6 +95,7 @@
             Controls.Add(buttonQuit);
             Controls.Add(buttonSettings);
             Controls.Add(buttonNewGame);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "IdleClicker";
             Text = "Idle Clicker";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
